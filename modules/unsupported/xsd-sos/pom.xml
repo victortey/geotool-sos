@@ -86,11 +86,11 @@
 		  <schemaLocation>sosInsertResult.xsd</schemaLocation>
 		  <schemaLocation>sosInsertResultTemplate.xsd</schemaLocation>
 		  <schemaLocation>sosInsertSensor.xsd</schemaLocation>-->
-		   <schemaLocation>sosGetObservationById.xsd</schemaLocation>	
+		   <schemaLocation>sosInsertResultTemplate.xsd</schemaLocation>
 		  
 		  
-          <schemaSourceDirectory>${basedir}/src/main/resources/org/geotools/sos/v2_0</schemaSourceDirectory>
-		  <targetPrefix>sos</targetPrefix>         
+          <schemaSourceDirectory>${basedir}/src/main/resources</schemaSourceDirectory>
+		  <!--<targetPrefix>sos</targetPrefix>-->
 		  <generateConfiguration>true</generateConfiguration>
           <generateBindingInterface>true</generateBindingInterface>
           <generateSchemaLocationResolver>false</generateSchemaLocationResolver>
