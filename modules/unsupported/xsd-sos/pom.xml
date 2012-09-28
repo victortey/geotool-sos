@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- =======================================================================    
+        Maven Project Configuration File                                        
+                                                                                
+        The Geotools Project                                                    
+            http://www.geotools.org/                                            
+                                                                                
+        Version: $Id$              
+     ======================================================================= -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                               http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.geotools</groupId>
+    <artifactId>unsupported</artifactId>
+    <version>9-SNAPSHOT</version>
+  </parent>
+
+
+  <!-- =========================================================== -->
+  <!--     Module Description                                      -->
+  <!-- =========================================================== -->
+  <groupId>org.geotools</groupId>
+  <artifactId>gt-xsd-sos</artifactId>
+  <packaging>jar</packaging>
+  <name>SOS xsd unsupported modules</name>
+
+  <scm>
+    <connection>
+      scm:svn:http://svn.geotools.org/trunk/modules/unsupported/xsd-sos
+    </connection>
+    <url>http://svn.geotools.org/trunk/modules/unsupported/xsd-sos/</url>
+  </scm>
+
+  <licenses>
+    <license>
+      <name>Lesser General Public License (LGPL)</name>
+      <url>http://www.gnu.org/copyleft/lesser.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  
+
+ <dependencies>   
+    <dependency>
+      <groupId>org.geotools.xsd</groupId>
+      <artifactId>gt-xsd-filter</artifactId>
+      <version>${project.version}</version>
+    </dependency>    
+    <dependency>
+      <groupId>org.geotools.xsd</groupId>
+      <artifactId>gt-xsd-fes</artifactId>
+      <version>${project.version}</version>
+    </dependency>    
+    <dependency>
+      <groupId>org.geotools.xsd</groupId>
+      <artifactId>gt-xsd-ows</artifactId>
+      <version>${project.version}</version>
+    </dependency> 	
+	<dependency>
+		<groupId>org.jvnet.ogc</groupId>
+		<artifactId>sos-v_2_0_0-schema</artifactId>
+		<version>1.0.4-SNAPSHOT</version>		
+	</dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.geotools.maven</groupId>
+        <artifactId>xmlcodegen</artifactId>
+        <configuration>
+          <!--<schemaLocation>sos.xsd</schemaLocation>
+		  <schemaLocation>sosContents.xsd</schemaLocation>
+		  <schemaLocation>sosGetCapabilities.xsd</schemaLocation>
+		  <schemaLocation>sosGetFeatureOfInterest.xsd</schemaLocation>
+		  <schemaLocation>sosGetObservation.xsd</schemaLocation>
+		  <schemaLocation>sosGetObservationById.xsd</schemaLocation>		  
+		  <schemaLocation>sosGetResult.xsd</schemaLocation>
+		  <schemaLocation>sosGetResultTemplate.xsd</schemaLocation>
+		  <schemaLocation>sosInsertionCapabilities.xsd</schemaLocation>
+		  <schemaLocation>sosInsertObservation.xsd</schemaLocation>
+		  <schemaLocation>sosInsertResult.xsd</schemaLocation>
+		  <schemaLocation>sosInsertResultTemplate.xsd</schemaLocation>
+		  <schemaLocation>sosInsertSensor.xsd</schemaLocation>-->
+		   <schemaLocation>sosGetObservationById.xsd</schemaLocation>	
+		  
+		  
+          <schemaSourceDirectory>${basedir}/src/main/resources/org/geotools/sos/v2_0</schemaSourceDirectory>
+		  <targetPrefix>sos</targetPrefix>         
+		  <generateConfiguration>true</generateConfiguration>
+          <generateBindingInterface>true</generateBindingInterface>
+          <generateSchemaLocationResolver>false</generateSchemaLocationResolver>
+		  <overwriteExistingFiles>true</overwriteExistingFiles>
+		  <bindingConstructorArguments>
+                   <bindingConstructorArgument>
+                       <name>factory</name>
+                       <type>net.opengis.sos.v_2_0_0.ObjectFactory</type>
+                   </bindingConstructorArgument>
+               </bindingConstructorArguments> 
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+</project>
